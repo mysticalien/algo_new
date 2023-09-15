@@ -1,2 +1,9 @@
-package pac1;public class CommandLineArguments {
+package pac1;
+
+public class CommandLineArguments {
+    public static void main(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Аргумент " + i + ": " + args[i]);
+        }
+    }
 }
