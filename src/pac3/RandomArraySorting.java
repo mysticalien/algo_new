@@ -3,6 +3,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class RandomArraySorting {
+
+    public static final Random RANDOM = new Random();
+
     public static void main(String[] args) {
         int arraySize = 10;
         double[] randomArray1 = generateRandomArrayUsingMath(arraySize);
@@ -34,9 +37,8 @@ public class RandomArraySorting {
 
     private static double[] generateRandomArrayUsingRandomClass(int size) {
         double[] array = new double [size];
-        Random random = new Random();
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextDouble();
+            array[i] = RANDOM.nextDouble();
         }
         return array;
     }

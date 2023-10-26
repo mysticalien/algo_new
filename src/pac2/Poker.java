@@ -7,15 +7,17 @@ import java.util.Scanner;
 
 public class Poker {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int numPlayers;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Введите количество игроков: ");
+            numPlayers = scanner.nextInt();
 
-        System.out.print("Введите количество игроков: ");
-        int numPlayers = scanner.nextInt();
-
-        if (numPlayers < 1) {
-            System.out.println("Некорректное количество игроков.");
-            return;
+            if (numPlayers < 1) {
+                System.out.println("Некорректное количество игроков.");
+                return;
+            }
         }
+
 
         List<String> deck = generateDeck();
         shuffleDeck(deck);

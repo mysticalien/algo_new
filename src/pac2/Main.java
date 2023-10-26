@@ -1,6 +1,6 @@
 package pac2;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -38,7 +38,7 @@ public class Main {
                 case 3:
                     System.out.print("Введите бренд компьютера для поиска: ");
                     brand = scanner.nextLine();
-                    ArrayList<Computer> searchResults = shop.searchComputers(brand);
+                    List<Computer> searchResults = shop.searchComputers(brand);
                     if (searchResults.isEmpty()) {
                         System.out.println("Компьютеры с таким брендом не найдены.");
                     } else {

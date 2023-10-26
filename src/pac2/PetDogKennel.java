@@ -40,20 +40,13 @@ package pac2;
 //}
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PetDogKennel {
-    private ArrayList<Dog> dogs;
+    private final List<Dog> dogs;
 
     public PetDogKennel() {
         dogs = new ArrayList<>();
-    }
-
-    public void addDog(Dog dog) {
-        dogs.add(dog);
-    }
-
-    public ArrayList<Dog> getDogs() {
-        return dogs;
     }
 
     public static void main(String[] args) {
@@ -65,12 +58,20 @@ public class PetDogKennel {
         petDog.addDog(new Dog("Макс", 5));
 
         // Вывод информации о собаках в питомнике
-        ArrayList<Dog> dogList = petDog.getDogs();
+        List<Dog> dogList = petDog.getDogs();
         for (Dog dog : dogList) {
             System.out.println("Имя: " + dog.getName());
             System.out.println("Возраст: " + dog.getAge() + " года");
             System.out.println("Возраст в человеческих годах: " + dog.getHumanAge() + " лет");
             System.out.println();
         }
+    }
+
+    public void addDog(Dog dog) {
+        dogs.add(dog);
+    }
+
+    public List<Dog> getDogs() {
+        return dogs;
     }
 }

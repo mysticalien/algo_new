@@ -1,10 +1,11 @@
 package pac2;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Shop {
-    private ArrayList<Computer> computers;
+    private final List<Computer> computers;
 
     public Shop() {
         computers = new ArrayList<>();
@@ -16,22 +17,10 @@ public class Shop {
     }
 
     public void removeComputer(String brand, String model) {
-        Iterator<Computer> iterator = computers.iterator();
-        while (iterator.hasNext()) {
-            Computer computer = iterator.next();
-            if (computer.getBrand().equalsIgnoreCase(brand) && computer.getModel().equalsIgnoreCase(model)) {
-                iterator.remove();
-            }
-        }
+        computers.removeIf(computer -> computer.has(brand, model));
     }
 
-    public ArrayList<Computer> searchComputers(String brand) {
-        ArrayList<Computer> results = new ArrayList<>();
-        for (Computer computer : computers) {
-            if (computer.getBrand().equalsIgnoreCase(brand)) {
-                results.add(computer);
-            }
-        }
-        return results;
+    public List<Computer> searchComputers(String brand) {
+        return computers.stream().filter(c -> c.hasBrand(brand)).collect(Collectors.toList());
     }
 }

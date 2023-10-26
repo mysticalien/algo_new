@@ -9,15 +9,6 @@ public class Tester {
         count = 0;
     }
 
-    public void addCircle(Circle circle) {
-        if (count < circles.length) {
-            circles[count] = circle;
-            count++;
-        } else {
-            System.out.println("Масик полон.");
-        }
-    }
-
     public static void main(String[] args) {
         Tester tester = new Tester(3);
 
@@ -41,6 +32,15 @@ public class Tester {
             System.out.println("Центр: (" + center.getX() + ", " + center.getY() + ")");
             System.out.println("Радиус: " + radius);
             System.out.println();
+        }
+    }
+
+    public void addCircle(Circle circle) {
+        if (count < circles.length) {
+            circles[count] = circle;
+            count++;
+        } else {
+            System.out.println("Масик полон.");
         }
     }
 }

@@ -15,7 +15,7 @@ public class HowMany {
     }
 
     private static int countWords(String input) {
-        String[] words = input.split("\\s+"); // Разделение строки на слова по пробелам
+        String[] words = input.split("[\\s\\t,.;]+"); // Разделение строки на слова по пробелам
 
         int count = 0;
         for (String word : words) {
